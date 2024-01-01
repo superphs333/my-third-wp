@@ -27,7 +27,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a href="#top" class="nav-link"> Home </a>
+            <a href="#top" class="nav-link"> <?php echo get_field('top_section_title') ?> </a>
           </li>
           <li class="nav-item">
             <a href="#intro" class="nav-link"> Intro </a>

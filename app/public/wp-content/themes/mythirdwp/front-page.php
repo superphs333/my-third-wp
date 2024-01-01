@@ -1,21 +1,22 @@
 <?php get_header(); ?>
 
-<section id="top" style="background-image: url('<?php echo get_theme_file_uri('assets/images/bg-top.jpg'); ?>');">
+<section id="top" style="background-image: url('<?php echo get_field('top_background_image')['url']; ?>');">
   <div class="section-content overlay d-flex justify-content-center align-items-center">
     <div class="container-xxl">
       <div class="row align-items-center">
         <div class="col-md-9 welcome">
-          <h1 class="welcome-title fw-light">Welcome to <span class="text-warning fw-bold">my first website</span>.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, quae.</h1>
+          <!-- <h1 class="welcome-title fw-light">Welcome to <span class="text-warning fw-bold">my first website</span>.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, quae.</h1> -->
+          <h1 class="welcome-title fw-light"><?php echo get_field('top_heading'); ?></h1>
           <div class="divider"></div>
           <div class="welcome-desc">
-            <p class="lead">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat error sint nihil ex ab
-              nisi nulla totam omnis beatae provident?</p>
+            <p class="lead"><?php echo get_field('top_desc'); ?></p>
           </div>
         </div>
         <div class="col-md-3 d-none d-md-block letsgo">
           <div class="card card-body letsgo-card">
-            <div class="letsgo my-3">
+            <?php echo get_field('top_form'); ?>
+            <!-- <div class="letsgo my-3">
               <h4 class="letsgo-title card-title text-dark mb-3">Easy contact!</h4>
               <p class="card-text text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde,
                 tempora.</p>
@@ -37,7 +38,7 @@
                   <button class="btn btn-primary w-100" type="button">Submit</button>
                 </p>
               </form>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
