@@ -1,8 +1,6 @@
-<?php
-get_header();
-?>
+<?php get_header(); ?>
 
-<section id="top">
+<section id="top" style="background-image: url('<?php echo get_theme_file_uri('assets/images/bg-top.jpg'); ?>');">
   <div class="section-content overlay d-flex justify-content-center align-items-center">
     <div class="container-xxl">
       <div class="row align-items-center">
@@ -54,7 +52,8 @@ get_header();
         <div class="col-md-6 intro-first">
           <div class="row px-md-3">
             <div class="col-6">
-              <div class="card card-body my-3 position-relative rounded-3 shadow-lg intro-first-card">
+              <div class="card card-body my-3 position-relative rounded-3 shadow-lg intro-first-card"
+                style="background-image: url('<?php echo get_theme_file_uri('assets/images/bg1.jpg') ?>');">
                 <!-- <div class="overlay d-flex justify-content-center align-items-center position-absolute h-100 w-100 shadow-lg">
                       <h3 class="fw-light">
                         <a href="#" class="link-light text-decoration-none">Link 1</a>
@@ -63,7 +62,8 @@ get_header();
               </div>
             </div>
             <div class="col-6">
-              <div class="card card-body my-3 position-relative rounded-3 shadow-lg intro-first-card">
+              <div class="card card-body my-3 position-relative rounded-3 shadow-lg intro-first-card"
+                style="background-image: url('<?php echo get_theme_file_uri('assets/images/bg2.jpg') ?>');">
                 <!-- <div class="overlay d-flex justify-content-center align-items-center position-absolute h-100 w-100 shadow-lg">
                       <h3 class="fw-light">
                         <a href="#" class="link-light text-decoration-none">Link 2</a>
@@ -72,7 +72,8 @@ get_header();
               </div>
             </div>
             <div class="col-6">
-              <div class="card card-body my-3 position-relative rounded-3 shadow-lg intro-first-card">
+              <div class="card card-body my-3 position-relative rounded-3 shadow-lg intro-first-card"
+                style="background-image: url('<?php echo get_theme_file_uri('assets/images/bg3.jpg') ?>');">
                 <!-- <div class="overlay d-flex justify-content-center align-items-center position-absolute h-100 w-100 shadow-lg">
                       <h3 class="fw-light">
                         <a href="#" class="link-light text-decoration-none">Link 3</a>
@@ -81,7 +82,8 @@ get_header();
               </div>
             </div>
             <div class="col-6">
-              <div class="card card-body my-3 position-relative rounded-3 shadow-lg intro-first-card">
+              <div class="card card-body my-3 position-relative rounded-3 shadow-lg intro-first-card"
+                style="background-image: url('<?php echo get_theme_file_uri('assets/images/bg4.jpg') ?>');">
                 <!-- <div class="overlay d-flex justify-content-center align-items-center position-absolute h-100 w-100 shadow-lg">
                       <h3 class="fw-light">
                         <a href="#" class="link-light text-decoration-none">Link 4</a>
@@ -117,7 +119,7 @@ get_header();
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <img src="./assets/images/port1.jpg" alt="" class="img-fluid" />
+          <img src="<?php echo get_theme_file_uri('assets/images/port1.jpg'); ?>" alt="" class="img-fluid" />
           <p class="mt-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore a quo dolorum iste totam,
             ducimus, officiis sed sunt iure ipsa voluptates ipsum impedit maxime laborum quidem natus magni. Enim,
             maxime!</p>
@@ -141,7 +143,7 @@ get_header();
         <div class="services-col mx-2 my-3">
           <div class="card">
             <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
-              <img src="./assets/images/port1.jpg" alt="" class="card-img-top" />
+              <img src="<?php echo get_theme_file_uri('assets/images/port1.jpg'); ?>" alt="" class="card-img-top" />
             </a>
             <div class="card-body">
               <h4 class="card-title">Slide title</h4>
@@ -155,7 +157,7 @@ get_header();
         <div class="services-col mx-2 my-3">
           <div class="card">
             <a href="#">
-              <img src="./assets/images/port2.jpg" alt="" class="card-img-top" />
+              <img src="<?php echo get_theme_file_uri('assets/images/port2.jpg'); ?>" alt="" class="card-img-top" />
             </a>
             <div class="card-body">
               <h4 class="card-title">Slide title</h4>
@@ -169,7 +171,7 @@ get_header();
         <div class="services-col mx-2 my-3">
           <div class="card">
             <a href="#">
-              <img src="./assets/images/port3.jpg" alt="" class="card-img-top" />
+              <img src="<?php echo get_theme_file_uri('assets/images/port3.jpg'); ?>" alt="" class="card-img-top" />
             </a>
             <div class="card-body">
               <h4 class="card-title">Slide title</h4>
@@ -183,7 +185,7 @@ get_header();
         <div class="services-col mx-2 my-3">
           <div class="card">
             <a href="#">
-              <img src="./assets/images/port4.jpg" alt="" class="card-img-top" />
+              <img src="<?php echo get_theme_file_uri('assets/images/port4.jpg'); ?>" alt="" class="card-img-top" />
             </a>
             <div class="card-body">
               <h4 class="card-title">Slide title</h4>
@@ -197,7 +199,7 @@ get_header();
         <div class="services-col mx-2 my-3">
           <div class="card">
             <a href="#">
-              <img src="./assets/images/port5.jpg" alt="" class="card-img-top" />
+              <img src="<?php echo get_theme_file_uri('assets/images/port5.jpg'); ?>" alt="" class="card-img-top" />
             </a>
             <div class="card-body">
               <h4 class="card-title">Slide title</h4>
@@ -211,7 +213,7 @@ get_header();
         <div class="services-col mx-2 my-3">
           <div class="card">
             <a href="#">
-              <img src="./assets/images/port6.jpg" alt="" class="card-img-top" />
+              <img src="<?php echo get_theme_file_uri('assets/images/port6.jpg'); ?>" alt="" class="card-img-top" />
             </a>
             <div class="card-body">
               <h4 class="card-title">Slide title</h4>
@@ -227,7 +229,7 @@ get_header();
   </div>
 </section>
 
-<section id="slogan">
+<section id="slogan" style="background-image: url('<?php echo get_theme_file_uri('assets/images/bg-cta.jpg'); ?>');">
   <div class="section-content d-flex align-items-center h-100">
     <div class="container slogan">
       <div class="row">
@@ -296,55 +298,67 @@ get_header();
       </div>
       <div class="row gallery-body">
         <div class="col-md-4 col-sm-6 mb-4 gallery-item">
-          <div class="card card-body border-0 p-0">
+          <div class="card card-body border-0 p-0"
+            style="background-image: url('<?php echo get_theme_file_uri('assets/images/port1.jpg'); ?>');">
             <div class="overlay d-flex flex-column justify-content-center align-items-center h-100 w-100 border-2">
               <h2 class="gallery-title">Gallery 1</h2>
-              <a class="link-warning text-decoration-none" href="./assets/images/port1.jpg" data-lightbox="gallery"
+              <a class="link-warning text-decoration-none"
+                href="<?php echo get_theme_file_uri('assets/images/port1.jpg'); ?>" data-lightbox="gallery"
                 data-title="Gallery 1">View this gallery</a>
             </div>
           </div>
         </div>
         <div class="col-md-4 col-sm-6 mb-4 gallery-item">
-          <div class="card card-body border-0 p-0">
+          <div class="card card-body border-0 p-0"
+            style="background-image: url('<?php echo get_theme_file_uri('assets/images/port2.jpg'); ?>');">
             <div class="overlay d-flex flex-column justify-content-center align-items-center h-100 w-100 border-2">
               <h2 class="gallery-title">Gallery 2</h2>
-              <a class="link-warning text-decoration-none" href="./assets/images/port2.jpg" data-lightbox="gallery"
+              <a class="link-warning text-decoration-none"
+                href="<?php echo get_theme_file_uri('assets/images/port2.jpg'); ?>" data-lightbox="gallery"
                 data-title="Gallery 2"> View this gallery </a>
             </div>
           </div>
         </div>
         <div class="col-md-4 col-sm-6 mb-4 gallery-item">
-          <div class="card card-body border-0 p-0">
+          <div class="card card-body border-0 p-0"
+            style="background-image: url('<?php echo get_theme_file_uri('assets/images/port3.jpg'); ?>');">
             <div class="overlay d-flex flex-column justify-content-center align-items-center h-100 w-100 border-2">
               <h2 class="gallery-title">Gallery 3</h2>
-              <a class="link-warning text-decoration-none" href="./assets/images/port3.jpg" data-lightbox="gallery"
+              <a class="link-warning text-decoration-none"
+                href="<?php echo get_theme_file_uri('assets/images/port3.jpg'); ?>" data-lightbox="gallery"
                 data-title="Gallery 3"> View this gallery </a>
             </div>
           </div>
         </div>
         <div class="col-md-4 col-sm-6 mb-4 gallery-item">
-          <div class="card card-body border-0 p-0">
+          <div class="card card-body border-0 p-0"
+            style="background-image: url('<?php echo get_theme_file_uri('assets/images/port4.jpg'); ?>');">
             <div class="overlay d-flex flex-column justify-content-center align-items-center h-100 w-100 border-2">
               <h2 class="gallery-title">Gallery 4</h2>
-              <a class="link-warning text-decoration-none" href="./assets/images/port4.jpg" data-lightbox="gallery"
+              <a class="link-warning text-decoration-none"
+                href="<?php echo get_theme_file_uri('assets/images/port4.jpg'); ?>" data-lightbox="gallery"
                 data-title="Gallery 4"> View this gallery </a>
             </div>
           </div>
         </div>
         <div class="col-md-4 col-sm-6 mb-4 gallery-item">
-          <div class="card card-body border-0 p-0">
+          <div class="card card-body border-0 p-0"
+            style="background-image: url('<?php echo get_theme_file_uri('assets/images/port5.jpg'); ?>');">
             <div class="overlay d-flex flex-column justify-content-center align-items-center h-100 w-100 border-2">
               <h2 class="gallery-title">Gallery 5</h2>
-              <a class="link-warning text-decoration-none" href="./assets/images/port5.jpg" data-lightbox="gallery"
+              <a class="link-warning text-decoration-none"
+                href="<?php echo get_theme_file_uri('assets/images/port5.jpg'); ?>" data-lightbox="gallery"
                 data-title="Gallery 5"> View this gallery </a>
             </div>
           </div>
         </div>
         <div class="col-md-4 col-sm-6 mb-4 gallery-item">
-          <div class="card card-body border-0 p-0">
+          <div class="card card-body border-0 p-0"
+            style="background-image: url('<?php echo get_theme_file_uri('assets/images/port6.jpg'); ?>');">
             <div class="overlay d-flex flex-column justify-content-center align-items-center h-100 w-100 border-2">
               <h2 class="gallery-title">Gallery 6</h2>
-              <a class="link-warning text-decoration-none" href="./assets/images/port6.jpg" data-lightbox="gallery"
+              <a class="link-warning text-decoration-none"
+                href="<?php echo get_theme_file_uri('assets/images/port6.jpg'); ?>" data-lightbox="gallery"
                 data-title="Gallery 6">View this gallery</a>
             </div>
           </div>
@@ -354,7 +368,8 @@ get_header();
   </div>
 </section>
 
-<section id="cta" class="position-relative">
+<section id="cta" class="position-relative"
+  style="background-image: url('<?php echo get_theme_file_uri('assets/images/bg.jpg'); ?>');">
   <div
     class="section-content position-absolute h-100 w-100 overlay d-flex flex-column justify-content-center align-items-center">
     <div class="container text-center cta">
@@ -416,6 +431,4 @@ get_header();
   </div>
 </section>
 
-<?php
-get_footer();
-?>
+<?php get_footer(); ?>

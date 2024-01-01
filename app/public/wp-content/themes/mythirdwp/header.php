@@ -14,10 +14,10 @@
 <body <?php body_class(); ?>>
   <nav class="navbar navbar-expand-lg navbar-light bg-light py-3 shadow-lg sticky-top">
     <div class="container">
-      <a href="index.html" class="navbar-brand align-middle">
+      <a href="<?php echo esc_url(site_url('/')) ?>" class="navbar-brand align-middle">
         <h3 class="m-0">
-          <img src="assets/images/bootstrap-logo.png" alt="Logo" height="36px" />
-          My BS5 web
+          <img src="<?php echo get_theme_file_uri('assets/images/bootstrap-logo.png') ?>" alt="Logo" height="36px" />
+          <?php bloginfo('name') ?>
         </h3>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
