@@ -27,26 +27,20 @@
       <div class="row align-items-center">
         <div class="col-md-6 intro-first">
           <div class="row px-md-3">
+
+            <?php
+            $i = 1;
+            while ($i <= 4) { ?>
             <div class="col-6">
               <div class="card card-body my-3 position-relative rounded-3 shadow-lg intro-first-card"
-                style="background-image: url('<?php echo get_field('intro_image_1')['url']; ?>');">
+                style="background-image: url('<?php echo get_field('intro_image_' . $i)['url']; ?>');">
               </div>
             </div>
-            <div class="col-6">
-              <div class="card card-body my-3 position-relative rounded-3 shadow-lg intro-first-card"
-                style="background-image: url('<?php echo get_field('intro_image_2')['url']; ?>');">
-              </div>
-            </div>
-            <div class="col-6">
-              <div class="card card-body my-3 position-relative rounded-3 shadow-lg intro-first-card"
-                style="background-image: url('<?php echo get_field('intro_image_3')['url']; ?>');">
-              </div>
-            </div>
-            <div class="col-6">
-              <div class="card card-body my-3 position-relative rounded-3 shadow-lg intro-first-card"
-                style="background-image: url('<?php echo get_field('intro_image_4')['url']; ?>');">
-              </div>
-            </div>
+            <?php
+              $i++;
+            }
+            ?>
+
           </div>
         </div>
         <div class="col-md-6 intro-second">
