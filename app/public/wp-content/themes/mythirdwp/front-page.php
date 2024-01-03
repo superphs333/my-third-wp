@@ -29,35 +29,32 @@
           <div class="row px-md-3">
             <div class="col-6">
               <div class="card card-body my-3 position-relative rounded-3 shadow-lg intro-first-card"
-                style="background-image: url('<?php echo get_theme_file_uri('assets/images/bg1.jpg') ?>');">
+                style="background-image: url('<?php echo get_field('intro_image_1')['url']; ?>');">
               </div>
             </div>
             <div class="col-6">
               <div class="card card-body my-3 position-relative rounded-3 shadow-lg intro-first-card"
-                style="background-image: url('<?php echo get_theme_file_uri('assets/images/bg2.jpg') ?>');">
+                style="background-image: url('<?php echo get_field('intro_image_2')['url']; ?>');">
               </div>
             </div>
             <div class="col-6">
               <div class="card card-body my-3 position-relative rounded-3 shadow-lg intro-first-card"
-                style="background-image: url('<?php echo get_theme_file_uri('assets/images/bg3.jpg') ?>');">
+                style="background-image: url('<?php echo get_field('intro_image_3')['url']; ?>');">
               </div>
             </div>
             <div class="col-6">
               <div class="card card-body my-3 position-relative rounded-3 shadow-lg intro-first-card"
-                style="background-image: url('<?php echo get_theme_file_uri('assets/images/bg4.jpg') ?>');">
+                style="background-image: url('<?php echo get_field('intro_image_4')['url']; ?>');">
               </div>
             </div>
           </div>
         </div>
         <div class="col-md-6 intro-second">
-          <h5 class="fw-light">Greetings!</h5>
-          <h1 class="mb-4">Introduce our website.</h1>
+          <h5 class="fw-light"><?php echo get_field('intro_sub_title') ?>
+          </h5>
+          <h1 class="mb-4"><?php echo get_field('intro_heading') ?></h1>
           <div class="intro-text">
-            <p class="lead">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum recusandae praesentium
-              consectetur eum quis odit! Minima, eum non vero dolores adipisci quia sint voluptatem doloribus ullam cum
-              voluptas deserunt nostrum!</p>
-            <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae expedita veniam error
-              architecto est labore maiores distinctio, hic sint! Error.</p>
+            <p class="lead"><?php echo get_field('intro_desc') ?></p>
           </div>
         </div>
       </div>
