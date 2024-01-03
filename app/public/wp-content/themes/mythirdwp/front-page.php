@@ -5,8 +5,6 @@
     <div class="container-xxl">
       <div class="row align-items-center">
         <div class="col-md-9 welcome">
-          <!-- <h1 class="welcome-title fw-light">Welcome to <span class="text-warning fw-bold">my first website</span>.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, quae.</h1> -->
           <h1 class="welcome-title fw-light"><?php echo get_field('top_heading'); ?></h1>
           <div class="divider"></div>
           <div class="welcome-desc">
@@ -16,29 +14,6 @@
         <div class="col-md-3 d-none d-md-block letsgo">
           <div class="card card-body letsgo-card">
             <?php echo get_field('top_form'); ?>
-            <!-- <div class="letsgo my-3">
-              <h4 class="letsgo-title card-title text-dark mb-3">Easy contact!</h4>
-              <p class="card-text text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde,
-                tempora.</p>
-            </div>
-            <div class="letsgo-card-form">
-              <form>
-                <div class="mb-3">
-                  <input type="text" class="form-control" placeholder="Your name" />
-                </div>
-                <div class="mb-3">
-                  <input type="tel" class="form-control" placeholder="Your phone" />
-                </div>
-                <div class="form-check mb-3">
-                  <input type="text" class="form-check-input" id="flexCheckDefault" />
-                  <label for="flexCheckDefault" class="form-check-label text-secondary"> I agree to provide privacy.
-                  </label>
-                </div>
-                <p class="mb-3">
-                  <button class="btn btn-primary w-100" type="button">Submit</button>
-                </p>
-              </form>
-            </div> -->
           </div>
         </div>
       </div>
@@ -55,41 +30,21 @@
             <div class="col-6">
               <div class="card card-body my-3 position-relative rounded-3 shadow-lg intro-first-card"
                 style="background-image: url('<?php echo get_theme_file_uri('assets/images/bg1.jpg') ?>');">
-                <!-- <div class="overlay d-flex justify-content-center align-items-center position-absolute h-100 w-100 shadow-lg">
-                      <h3 class="fw-light">
-                        <a href="#" class="link-light text-decoration-none">Link 1</a>
-                      </h3>
-                    </div> -->
               </div>
             </div>
             <div class="col-6">
               <div class="card card-body my-3 position-relative rounded-3 shadow-lg intro-first-card"
                 style="background-image: url('<?php echo get_theme_file_uri('assets/images/bg2.jpg') ?>');">
-                <!-- <div class="overlay d-flex justify-content-center align-items-center position-absolute h-100 w-100 shadow-lg">
-                      <h3 class="fw-light">
-                        <a href="#" class="link-light text-decoration-none">Link 2</a>
-                      </h3>
-                    </div> -->
               </div>
             </div>
             <div class="col-6">
               <div class="card card-body my-3 position-relative rounded-3 shadow-lg intro-first-card"
                 style="background-image: url('<?php echo get_theme_file_uri('assets/images/bg3.jpg') ?>');">
-                <!-- <div class="overlay d-flex justify-content-center align-items-center position-absolute h-100 w-100 shadow-lg">
-                      <h3 class="fw-light">
-                        <a href="#" class="link-light text-decoration-none">Link 3</a>
-                      </h3>
-                    </div> -->
               </div>
             </div>
             <div class="col-6">
               <div class="card card-body my-3 position-relative rounded-3 shadow-lg intro-first-card"
                 style="background-image: url('<?php echo get_theme_file_uri('assets/images/bg4.jpg') ?>');">
-                <!-- <div class="overlay d-flex justify-content-center align-items-center position-absolute h-100 w-100 shadow-lg">
-                      <h3 class="fw-light">
-                        <a href="#" class="link-light text-decoration-none">Link 4</a>
-                      </h3>
-                    </div> -->
               </div>
             </div>
           </div>
