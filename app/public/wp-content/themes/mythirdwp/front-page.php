@@ -31,24 +31,23 @@
             <?php
             $i = 1;
             while ($i <= 4) { ?>
-            <div class="col-6">
-              <div class="card card-body my-3 position-relative rounded-3 shadow-lg intro-first-card"
-                style="background-image: url('<?php echo get_field('intro_image_' . $i)['url']; ?>');">
+
+              <div class="col-6">
+                <div class="card card-body my-3 position-relative rounded-3 shadow-lg intro-first-card" style="background-image: url('<?php echo get_field('intro_image_' . $i)['url']; ?>');">
+                </div>
               </div>
-            </div>
-            <?php
-              $i++;
+
+            <?php $i++;
             }
             ?>
 
           </div>
         </div>
         <div class="col-md-6 intro-second">
-          <h5 class="fw-light"><?php echo get_field('intro_sub_title') ?>
-          </h5>
-          <h1 class="mb-4"><?php echo get_field('intro_heading') ?></h1>
+          <h5 class="fw-light"><?php echo get_field('intro_sub_title'); ?></h5>
+          <h1 class="mb-4"><?php echo get_field('intro_heading'); ?></h1>
           <div class="intro-text">
-            <p class="lead"><?php echo get_field('intro_desc') ?></p>
+            <p class="lead"><?php echo get_field('intro_desc'); ?></p>
           </div>
         </div>
       </div>
@@ -58,59 +57,70 @@
 
 <section id="services">
   <!-- Modal of each trigger below dynamically -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Slide title</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <img src="<?php echo get_theme_file_uri('assets/images/port1.jpg'); ?>" alt="" class="img-fluid" />
-          <p class="mt-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore a quo dolorum iste totam,
-            ducimus, officiis sed sunt iure ipsa voluptates ipsum impedit maxime laborum quidem natus magni. Enim,
-            maxime!</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+  <?php
+  $slides = get_field('slides');
+  if ($slides) {
+    $i = 1;
+    foreach ($slides as $slide) { ?>
+
+      <div class="modal fade" id="slide-<?php echo $i; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title fw-bold" id="exampleModalLabel"><?php echo get_field($slide . '_title'); ?></h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <img src="<?php echo get_field($slide . '_image')['url']; ?>" alt="<?php echo get_field($slide . '_image')['alt']; ?>" class="img-fluid" />
+              <p class="mt-4"><?php echo get_field($slide . '_body'); ?></p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
+
+  <?php $i++;
+    }
+  }
+  ?>
 
   <div class="section-content">
     <div class="container services">
       <div class="services-header text-center mb-5">
-        <h1 class="display-5"><?php echo get_field('services_heading'); ?>
-        </h1>
+        <h1 class="display-5"><?php echo get_field('services_heading'); ?></h1>
         <div class="divider"></div>
-        <p class="lead text-secondary"><?php echo get_field('services_subheading') ?>
-        </p>
+        <p class="lead text-secondary"><?php echo get_field('services_subheading'); ?></p>
       </div>
       <div id="slick-slide" class="sercives-body">
 
         <?php
         $slides = get_field('slides');
-        $i = 1;
+        // var_dump($slides);
         if ($slides) {
+          $i = 1;
           foreach ($slides as $slide) { ?>
-        <div class="services-col mx-2 my-3">
-          <div class="card">
-            <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
-              <img src="<?php echo get_field($slide . '_image')['url']; ?>"
-                alt="<?php echo get_field($slide . '_image')['alt']; ?>" class="card-img-top" />
-            </a>
-            <div class="card-body">
-              <h4 class="card-title"><?php echo get_field($slide . '_title') ?>
-              </h4>
-              <p class="card-text fw-light mb-4"><?php echo wp_trim_words(get_field($slide . '_body'), 20) ?></p>
-              <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">View more...</a>
+
+            <div class="services-col mx-2 my-3">
+              <div class="card">
+                <a href="#" data-bs-toggle="modal" data-bs-target="#slide-<?php echo $i; ?>">
+                  <img src="<?php echo get_field($slide . '_image')['url']; ?>" alt="<?php echo get_field($slide . '_image')['alt']; ?>" class="card-img-top" />
+                </a>
+                <div class="card-body">
+                  <h4 class="card-title fw-bold"><?php echo get_field($slide . '_title'); ?></h4>
+                  <p class="card-text fw-light mb-4"><?php echo wp_trim_words(get_field($slide . '_body'), 20); ?></p>
+                  <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#slide-<?php echo $i; ?>">View
+                    more...</a>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <?php }
+
+        <?php $i++;
+          }
         }
         ?>
+
       </div>
     </div>
   </div>
@@ -185,68 +195,50 @@
       </div>
       <div class="row gallery-body">
         <div class="col-md-4 col-sm-6 mb-4 gallery-item">
-          <div class="card card-body border-0 p-0"
-            style="background-image: url('<?php echo get_theme_file_uri('assets/images/port1.jpg'); ?>');">
+          <div class="card card-body border-0 p-0" style="background-image: url('<?php echo get_theme_file_uri('assets/images/port1.jpg'); ?>');">
             <div class="overlay d-flex flex-column justify-content-center align-items-center h-100 w-100 border-2">
               <h2 class="gallery-title">Gallery 1</h2>
-              <a class="link-warning text-decoration-none"
-                href="<?php echo get_theme_file_uri('assets/images/port1.jpg'); ?>" data-lightbox="gallery"
-                data-title="Gallery 1">View this gallery</a>
+              <a class="link-warning text-decoration-none" href="<?php echo get_theme_file_uri('assets/images/port1.jpg'); ?>" data-lightbox="gallery" data-title="Gallery 1">View this gallery</a>
             </div>
           </div>
         </div>
         <div class="col-md-4 col-sm-6 mb-4 gallery-item">
-          <div class="card card-body border-0 p-0"
-            style="background-image: url('<?php echo get_theme_file_uri('assets/images/port2.jpg'); ?>');">
+          <div class="card card-body border-0 p-0" style="background-image: url('<?php echo get_theme_file_uri('assets/images/port2.jpg'); ?>');">
             <div class="overlay d-flex flex-column justify-content-center align-items-center h-100 w-100 border-2">
               <h2 class="gallery-title">Gallery 2</h2>
-              <a class="link-warning text-decoration-none"
-                href="<?php echo get_theme_file_uri('assets/images/port2.jpg'); ?>" data-lightbox="gallery"
-                data-title="Gallery 2"> View this gallery </a>
+              <a class="link-warning text-decoration-none" href="<?php echo get_theme_file_uri('assets/images/port2.jpg'); ?>" data-lightbox="gallery" data-title="Gallery 2"> View this gallery </a>
             </div>
           </div>
         </div>
         <div class="col-md-4 col-sm-6 mb-4 gallery-item">
-          <div class="card card-body border-0 p-0"
-            style="background-image: url('<?php echo get_theme_file_uri('assets/images/port3.jpg'); ?>');">
+          <div class="card card-body border-0 p-0" style="background-image: url('<?php echo get_theme_file_uri('assets/images/port3.jpg'); ?>');">
             <div class="overlay d-flex flex-column justify-content-center align-items-center h-100 w-100 border-2">
               <h2 class="gallery-title">Gallery 3</h2>
-              <a class="link-warning text-decoration-none"
-                href="<?php echo get_theme_file_uri('assets/images/port3.jpg'); ?>" data-lightbox="gallery"
-                data-title="Gallery 3"> View this gallery </a>
+              <a class="link-warning text-decoration-none" href="<?php echo get_theme_file_uri('assets/images/port3.jpg'); ?>" data-lightbox="gallery" data-title="Gallery 3"> View this gallery </a>
             </div>
           </div>
         </div>
         <div class="col-md-4 col-sm-6 mb-4 gallery-item">
-          <div class="card card-body border-0 p-0"
-            style="background-image: url('<?php echo get_theme_file_uri('assets/images/port4.jpg'); ?>');">
+          <div class="card card-body border-0 p-0" style="background-image: url('<?php echo get_theme_file_uri('assets/images/port4.jpg'); ?>');">
             <div class="overlay d-flex flex-column justify-content-center align-items-center h-100 w-100 border-2">
               <h2 class="gallery-title">Gallery 4</h2>
-              <a class="link-warning text-decoration-none"
-                href="<?php echo get_theme_file_uri('assets/images/port4.jpg'); ?>" data-lightbox="gallery"
-                data-title="Gallery 4"> View this gallery </a>
+              <a class="link-warning text-decoration-none" href="<?php echo get_theme_file_uri('assets/images/port4.jpg'); ?>" data-lightbox="gallery" data-title="Gallery 4"> View this gallery </a>
             </div>
           </div>
         </div>
         <div class="col-md-4 col-sm-6 mb-4 gallery-item">
-          <div class="card card-body border-0 p-0"
-            style="background-image: url('<?php echo get_theme_file_uri('assets/images/port5.jpg'); ?>');">
+          <div class="card card-body border-0 p-0" style="background-image: url('<?php echo get_theme_file_uri('assets/images/port5.jpg'); ?>');">
             <div class="overlay d-flex flex-column justify-content-center align-items-center h-100 w-100 border-2">
               <h2 class="gallery-title">Gallery 5</h2>
-              <a class="link-warning text-decoration-none"
-                href="<?php echo get_theme_file_uri('assets/images/port5.jpg'); ?>" data-lightbox="gallery"
-                data-title="Gallery 5"> View this gallery </a>
+              <a class="link-warning text-decoration-none" href="<?php echo get_theme_file_uri('assets/images/port5.jpg'); ?>" data-lightbox="gallery" data-title="Gallery 5"> View this gallery </a>
             </div>
           </div>
         </div>
         <div class="col-md-4 col-sm-6 mb-4 gallery-item">
-          <div class="card card-body border-0 p-0"
-            style="background-image: url('<?php echo get_theme_file_uri('assets/images/port6.jpg'); ?>');">
+          <div class="card card-body border-0 p-0" style="background-image: url('<?php echo get_theme_file_uri('assets/images/port6.jpg'); ?>');">
             <div class="overlay d-flex flex-column justify-content-center align-items-center h-100 w-100 border-2">
               <h2 class="gallery-title">Gallery 6</h2>
-              <a class="link-warning text-decoration-none"
-                href="<?php echo get_theme_file_uri('assets/images/port6.jpg'); ?>" data-lightbox="gallery"
-                data-title="Gallery 6">View this gallery</a>
+              <a class="link-warning text-decoration-none" href="<?php echo get_theme_file_uri('assets/images/port6.jpg'); ?>" data-lightbox="gallery" data-title="Gallery 6">View this gallery</a>
             </div>
           </div>
         </div>
@@ -255,10 +247,8 @@
   </div>
 </section>
 
-<section id="cta" class="position-relative"
-  style="background-image: url('<?php echo get_theme_file_uri('assets/images/bg.jpg'); ?>');">
-  <div
-    class="section-content position-absolute h-100 w-100 overlay d-flex flex-column justify-content-center align-items-center">
+<section id="cta" class="position-relative" style="background-image: url('<?php echo get_theme_file_uri('assets/images/bg.jpg'); ?>');">
+  <div class="section-content position-absolute h-100 w-100 overlay d-flex flex-column justify-content-center align-items-center">
     <div class="container text-center cta">
       <h3 class="dispaly-6 text-primary">Contact us anytime!</h3>
       <h2 class="display-4 text-light">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</h2>
@@ -274,9 +264,7 @@
 <section id="find-us">
   <div class="container-fluid px-0 mb-3">
     <div id="map">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14280.713052870058!2d126.97104083821134!3d37.5704304726405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca37454f683b1%3A0xfa19c5217c6a0bc0!2z6rSR7ZmU66y4!5e0!3m2!1sko!2skr!4v1629755858980!5m2!1sko!2skr"
-        width="100%" height="600" style="border: 0" allowfullscreen="" loading="lazy"></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14280.713052870058!2d126.97104083821134!3d37.5704304726405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca37454f683b1%3A0xfa19c5217c6a0bc0!2z6rSR7ZmU66y4!5e0!3m2!1sko!2skr!4v1629755858980!5m2!1sko!2skr" width="100%" height="600" style="border: 0" allowfullscreen="" loading="lazy"></iframe>
     </div>
   </div>
   <div class="container">
