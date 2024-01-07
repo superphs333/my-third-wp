@@ -54,12 +54,12 @@ add_action('init', 'source_playground_dollar_receive_rate');
 function source_playground_dollar_receive_rate()
 {
 
-  if ($_GET["GET_DOLLAR"] == "OK") {
-    // Use an API to get the dollar exchange rate
-    $apiUrl = "https://api.exchangeratesapi.io/latest?base=USD&symbols=KRW"; // Example API endpoint
-    $won_for_1_dollar = 1253;
-    echo $won_for_1_dollar;
-  }
+  // if ($_GET["GET_DOLLAR"] == "OK") {
+  //   // Use an API to get the dollar exchange rate
+  //   $apiUrl = "https://api.exchangeratesapi.io/latest?base=USD&symbols=KRW"; // Example API endpoint
+  //   $won_for_1_dollar = 1253;
+  //   echo $won_for_1_dollar;
+  // }
 }
 
 // 달러환율산출이라는 메뉴를 클릭했을 때 실행 됨
