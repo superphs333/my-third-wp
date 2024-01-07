@@ -81,96 +81,36 @@
   <div class="section-content">
     <div class="container services">
       <div class="services-header text-center mb-5">
-        <h1 class="display-5">Our amazing services</h1>
+        <h1 class="display-5"><?php echo get_field('services_heading'); ?>
+        </h1>
         <div class="divider"></div>
-        <p class="lead text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet alias temporibus
-          est cum autem enim, aperiam quibusdam a veritatis voluptatibus?</p>
+        <p class="lead text-secondary"><?php echo get_field('services_subheading') ?>
+        </p>
       </div>
       <div id="slick-slide" class="sercives-body">
+
+        <?php
+        $slides = get_field('slides');
+        $i = 1;
+        if ($slides) {
+          foreach ($slides as $slide) { ?>
         <div class="services-col mx-2 my-3">
           <div class="card">
             <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
-              <img src="<?php echo get_theme_file_uri('assets/images/port1.jpg'); ?>" alt="" class="card-img-top" />
+              <img src="<?php echo get_field($slide . '_image')['url']; ?>"
+                alt="<?php echo get_field($slide . '_image')['alt']; ?>" class="card-img-top" />
             </a>
             <div class="card-body">
-              <h4 class="card-title">Slide title</h4>
-              <p class="card-text fw-light mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
-                laboriosam quisquam totam voluptatibus. Dignissimos laudantium repellendus cum adipisci. Voluptates,
-                eligendi!</p>
+              <h4 class="card-title"><?php echo get_field($slide . '_title') ?>
+              </h4>
+              <p class="card-text fw-light mb-4"><?php echo wp_trim_words(get_field($slide . '_body'), 20) ?></p>
               <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">View more...</a>
             </div>
           </div>
         </div>
-        <div class="services-col mx-2 my-3">
-          <div class="card">
-            <a href="#">
-              <img src="<?php echo get_theme_file_uri('assets/images/port2.jpg'); ?>" alt="" class="card-img-top" />
-            </a>
-            <div class="card-body">
-              <h4 class="card-title">Slide title</h4>
-              <p class="card-text fw-light mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
-                laboriosam quisquam totam voluptatibus. Dignissimos laudantium repellendus cum adipisci. Voluptates,
-                eligendi!</p>
-              <a href="#" class="btn btn-primary">View more...</a>
-            </div>
-          </div>
-        </div>
-        <div class="services-col mx-2 my-3">
-          <div class="card">
-            <a href="#">
-              <img src="<?php echo get_theme_file_uri('assets/images/port3.jpg'); ?>" alt="" class="card-img-top" />
-            </a>
-            <div class="card-body">
-              <h4 class="card-title">Slide title</h4>
-              <p class="card-text fw-light mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
-                laboriosam quisquam totam voluptatibus. Dignissimos laudantium repellendus cum adipisci. Voluptates,
-                eligendi!</p>
-              <a href="#" class="btn btn-primary">View more...</a>
-            </div>
-          </div>
-        </div>
-        <div class="services-col mx-2 my-3">
-          <div class="card">
-            <a href="#">
-              <img src="<?php echo get_theme_file_uri('assets/images/port4.jpg'); ?>" alt="" class="card-img-top" />
-            </a>
-            <div class="card-body">
-              <h4 class="card-title">Slide title</h4>
-              <p class="card-text fw-light mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
-                laboriosam quisquam totam voluptatibus. Dignissimos laudantium repellendus cum adipisci. Voluptates,
-                eligendi!</p>
-              <a href="#" class="btn btn-primary">View more...</a>
-            </div>
-          </div>
-        </div>
-        <div class="services-col mx-2 my-3">
-          <div class="card">
-            <a href="#">
-              <img src="<?php echo get_theme_file_uri('assets/images/port5.jpg'); ?>" alt="" class="card-img-top" />
-            </a>
-            <div class="card-body">
-              <h4 class="card-title">Slide title</h4>
-              <p class="card-text fw-light mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
-                laboriosam quisquam totam voluptatibus. Dignissimos laudantium repellendus cum adipisci. Voluptates,
-                eligendi!</p>
-              <a href="#" class="btn btn-primary">View more...</a>
-            </div>
-          </div>
-        </div>
-        <div class="services-col mx-2 my-3">
-          <div class="card">
-            <a href="#">
-              <img src="<?php echo get_theme_file_uri('assets/images/port6.jpg'); ?>" alt="" class="card-img-top" />
-            </a>
-            <div class="card-body">
-              <h4 class="card-title">Slide title</h4>
-              <p class="card-text fw-light mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
-                laboriosam quisquam totam voluptatibus. Dignissimos laudantium repellendus cum adipisci. Voluptates,
-                eligendi!</p>
-              <a href="#" class="btn btn-primary">View more...</a>
-            </div>
-          </div>
-        </div>
+        <?php }
+        }
+        ?>
       </div>
     </div>
   </div>

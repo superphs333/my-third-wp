@@ -33,7 +33,7 @@
             <a href="#intro" class="nav-link"> <?php echo get_field('intro_section_title') ?> </a>
           </li>
           <li class="nav-item">
-            <a href="#services" class="nav-link"> Services </a>
+            <a href="#services" class="nav-link"> <?php echo get_field('services_section_title') ?> </a>
           </li>
           <li class="nav-item">
             <a href="#slogan" class="nav-link"> Slogan </a>
